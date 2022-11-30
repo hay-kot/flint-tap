@@ -5,24 +5,24 @@
 class Flint < Formula
   desc "Flint is a frontmatter linter written in Go"
   homepage ""
-  version "0.0.3"
+  version "0.0.4"
   license "MIT"
 
   depends_on "go" => :optional
   depends_on "git"
 
   on_macos do
-    if Hardware::CPU.intel?
-      url "https://github.com/hay-kot/flint/releases/download/v0.0.3/flint_0.0.3_Darwin_x86_64.zip"
-      sha256 "358c80b49c222fd7b98c1bb4969383e8d57fbc329831dd589959e5439e66541a"
+    if Hardware::CPU.arm?
+      url "https://github.com/hay-kot/flint/releases/download/v0.0.4/flint_0.0.4_Darwin_arm64.zip"
+      sha256 "26bf9733950f31e42fa70bbe02992545927e71b595ce9add0474c6561dc1dc1c"
 
       def install
         bin.install "flint"
       end
     end
-    if Hardware::CPU.arm?
-      url "https://github.com/hay-kot/flint/releases/download/v0.0.3/flint_0.0.3_Darwin_arm64.zip"
-      sha256 "832c7c590d636c37bb0d0e97fcfc43329342ab2c43dca1d7ec222868e94f78ba"
+    if Hardware::CPU.intel?
+      url "https://github.com/hay-kot/flint/releases/download/v0.0.4/flint_0.0.4_Darwin_x86_64.zip"
+      sha256 "3f7fe06518b70de8c1e3e7ae4f918f84b35eda184b35cc400b4e7070fa13a15f"
 
       def install
         bin.install "flint"
@@ -31,17 +31,17 @@ class Flint < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/hay-kot/flint/releases/download/v0.0.3/flint_0.0.3_Linux_arm64.zip"
-      sha256 "b4e6cdc4dbbc1c9e67116391afd6c29a034cadca1f4ecb8c3467947a914dc551"
+    if Hardware::CPU.intel?
+      url "https://github.com/hay-kot/flint/releases/download/v0.0.4/flint_0.0.4_Linux_x86_64.zip"
+      sha256 "16e09ceb9c4486bd9cd52eb7e370231dcb92a82a25d858bc047cdec02ed252d1"
 
       def install
         bin.install "flint"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/hay-kot/flint/releases/download/v0.0.3/flint_0.0.3_Linux_x86_64.zip"
-      sha256 "7b9f45eeab9d21b68f78ac119b43626efcefad1dccd4e73fb218f4c8ff1169ce"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/hay-kot/flint/releases/download/v0.0.4/flint_0.0.4_Linux_arm64.zip"
+      sha256 "f555a9951e10e367d345a49a0f5c5bf73c1ab9969fe0df8fb5ad479a89ed8baa"
 
       def install
         bin.install "flint"
