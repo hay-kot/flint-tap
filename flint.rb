@@ -5,7 +5,7 @@
 class Flint < Formula
   desc "Flint is a frontmatter linter written in Go"
   homepage ""
-  version "0.0.4"
+  version "0.0.5"
   license "MIT"
 
   depends_on "go" => :optional
@@ -13,16 +13,16 @@ class Flint < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/hay-kot/flint/releases/download/v0.0.4/flint_0.0.4_Darwin_arm64.zip"
-      sha256 "26bf9733950f31e42fa70bbe02992545927e71b595ce9add0474c6561dc1dc1c"
+      url "https://github.com/hay-kot/flint/releases/download/v0.0.5/flint_0.0.5_Darwin_arm64.zip"
+      sha256 "40f4de48f708c977bf2f915f10f7c3b7f52a604b363e88051742bcc8aa828717"
 
       def install
         bin.install "flint"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/hay-kot/flint/releases/download/v0.0.4/flint_0.0.4_Darwin_x86_64.zip"
-      sha256 "3f7fe06518b70de8c1e3e7ae4f918f84b35eda184b35cc400b4e7070fa13a15f"
+      url "https://github.com/hay-kot/flint/releases/download/v0.0.5/flint_0.0.5_Darwin_x86_64.zip"
+      sha256 "8f522924c9c81fa839654026f4af05c3b2454e33b56299128c39bf8526ed3d11"
 
       def install
         bin.install "flint"
@@ -32,16 +32,16 @@ class Flint < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/hay-kot/flint/releases/download/v0.0.4/flint_0.0.4_Linux_x86_64.zip"
-      sha256 "16e09ceb9c4486bd9cd52eb7e370231dcb92a82a25d858bc047cdec02ed252d1"
+      url "https://github.com/hay-kot/flint/releases/download/v0.0.5/flint_0.0.5_Linux_x86_64.zip"
+      sha256 "e4451bbe148ffcbd398c1ffbdac34315185702335f10157219a730ab51c41444"
 
       def install
         bin.install "flint"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/hay-kot/flint/releases/download/v0.0.4/flint_0.0.4_Linux_arm64.zip"
-      sha256 "f555a9951e10e367d345a49a0f5c5bf73c1ab9969fe0df8fb5ad479a89ed8baa"
+      url "https://github.com/hay-kot/flint/releases/download/v0.0.5/flint_0.0.5_Linux_arm64.zip"
+      sha256 "41123ef6e49208c9452f3ee226b5b83ffef75485d3f3ae2b94e3d93dd63ddf7d"
 
       def install
         bin.install "flint"
