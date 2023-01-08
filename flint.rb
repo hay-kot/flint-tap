@@ -5,24 +5,24 @@
 class Flint < Formula
   desc "Flint is a frontmatter linter written in Go"
   homepage ""
-  version "0.0.5"
+  version "0.0.6"
   license "MIT"
 
   depends_on "go" => :optional
   depends_on "git"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/hay-kot/flint/releases/download/v0.0.5/flint_0.0.5_Darwin_arm64.zip"
-      sha256 "40f4de48f708c977bf2f915f10f7c3b7f52a604b363e88051742bcc8aa828717"
+    if Hardware::CPU.intel?
+      url "https://github.com/hay-kot/flint/releases/download/v0.0.6/flint_0.0.6_Darwin_x86_64.zip"
+      sha256 "00bfe34029c3476740c1790b8f0c2c1d5dd6afdf87c8a5c5ca54de588ac10501"
 
       def install
         bin.install "flint"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/hay-kot/flint/releases/download/v0.0.5/flint_0.0.5_Darwin_x86_64.zip"
-      sha256 "8f522924c9c81fa839654026f4af05c3b2454e33b56299128c39bf8526ed3d11"
+    if Hardware::CPU.arm?
+      url "https://github.com/hay-kot/flint/releases/download/v0.0.6/flint_0.0.6_Darwin_arm64.zip"
+      sha256 "834824fd0ce2a49b6a1b50acafea7de3c770f47a6e752417c7caaa202519f5f6"
 
       def install
         bin.install "flint"
@@ -32,16 +32,16 @@ class Flint < Formula
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/hay-kot/flint/releases/download/v0.0.5/flint_0.0.5_Linux_x86_64.zip"
-      sha256 "e4451bbe148ffcbd398c1ffbdac34315185702335f10157219a730ab51c41444"
+      url "https://github.com/hay-kot/flint/releases/download/v0.0.6/flint_0.0.6_Linux_x86_64.zip"
+      sha256 "3bd775556ab06c6e2395dd970c87af8e0c64e888727fafcb451a3d3fe6ad61ba"
 
       def install
         bin.install "flint"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/hay-kot/flint/releases/download/v0.0.5/flint_0.0.5_Linux_arm64.zip"
-      sha256 "41123ef6e49208c9452f3ee226b5b83ffef75485d3f3ae2b94e3d93dd63ddf7d"
+      url "https://github.com/hay-kot/flint/releases/download/v0.0.6/flint_0.0.6_Linux_arm64.zip"
+      sha256 "6345315f2f190a3ddeb0ca38952f4e9cf0f0950f129a8d256ece66f85a85cf38"
 
       def install
         bin.install "flint"
